@@ -37,7 +37,6 @@
         android:layout_marginBottom="130dp"
         android:id="@+id/imageView"
         android:layout_above="@+id/password_login"
-        android:layout_alignParentStart="true"
         android:background="#FFF"
         android:scaleType="centerCrop"/>
 
