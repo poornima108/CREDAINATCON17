@@ -1,15 +1,15 @@
 package com.example.hp.credainatcon17;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText email_id,pass_word;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    private EditText email_id, pass_word;
     private Button log_in;
     private TextView sign_up;
 
@@ -27,19 +27,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        if(view == log_in){
+        if (view == log_in) {
             loginUser();
         }
-        if (view == sign_up){
+        if (view == sign_up) {
             signupUser();
         }
     }
 
     private void signupUser() {
-        startActivity(new Intent(this,SignUpActivity.class));
+        startActivity(new Intent(this, SignUpActivity.class));
     }
 
     private void loginUser() {
-        
+
     }
 }

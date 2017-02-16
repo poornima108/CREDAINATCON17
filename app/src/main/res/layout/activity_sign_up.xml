@@ -23,22 +23,28 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_weight="3.66"
             android:background="#FFF"
-            android:src="@drawable/credai_logo1"
             android:scaleType="centerInside"
-            android:layout_weight="3.66" />
+            android:src="@drawable/credai_logo1" />
 
-        <EditText
-            android:paddingTop="20dp"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/heyy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:id="@+id/editText"
-            android:inputType="textPersonName"/>
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:paddingTop="20dp" />
+        </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="5dp"
             android:paddingTop="10dp">
@@ -46,98 +52,133 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Credai Member"
                 android:gravity="center"
-                android:textSize="18sp"/>
+                android:text="Credai Member"
+                android:textSize="18sp" />
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingTop="10dp">
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:text="Yes" />
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="20dp"
+                    android:text="No" />
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="10dp"
                 android:text="Chapter Name"
-                android:textSize="18sp"
-                android:paddingTop="10dp"/>
+                android:textSize="18sp" />
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:entries="@array/entries_hello"/>
+                tools:entries="@array/entries_hello"
+                tools:spinnerMode="dropdown" />
 
         </LinearLayout>
 
 
-
-
-
-        <EditText
-            android:id="@+id/email_id_register"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/password_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/email_id_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Company Name"
-            android:id="@+id/company_name"
-            android:inputType="text"/>
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/phone_number"
-            android:inputType="phone"/>
+            <EditText
+                android:id="@+id/password_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/dob_dd_mm_yyyy"
-            android:id="@+id/dob_user"
-            android:drawableEnd="@drawable/ic_event_black_24dp"/>
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Passport number"
-            android:inputType="number"
-            android:id="@+id/passport_number"/>
+            <EditText
+                android:id="@+id/company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Company Name"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Passport Expiry"
-            android:drawableEnd="@drawable/ic_event_black_24dp"
-            android:id="@+id/passport_expiry"/>
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/dob_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:hint="@string/dob_dd_mm_yyyy" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/passport_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Passport number"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/passport_expiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:hint="Passport Expiry" />
+        </android.support.design.widget.TextInputLayout>
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            tools:entries="@array/UKVisaStatus"
-            android:spinnerMode="dropdown"/>
+            android:spinnerMode="dropdown"
+            tools:entries="@array/UKVisaStatus" />
 
         <Button
             android:id="@+id/register_button"
