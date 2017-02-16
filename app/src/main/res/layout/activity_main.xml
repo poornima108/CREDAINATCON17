@@ -8,13 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#FFF"
+    android:background="@drawable/splash_screen_image2"
     tools:context="com.example.hp.credainatcon17.MainActivity">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/splash_screen_image"
-        android:scaleType="fitXY"/>
 
 </RelativeLayout>
