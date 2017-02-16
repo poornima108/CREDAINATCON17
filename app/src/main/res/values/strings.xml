@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CREDAI NATCON 17</string>
+    <string name="dont_have_an_account_sign_up"><u>Don\'t have an account?Sign Up</u></string>
 </resources>
