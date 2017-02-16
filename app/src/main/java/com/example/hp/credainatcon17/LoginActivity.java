@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             loginUser();
         }
         if (view == sign_up){
-            finish();
             signupUser();
         }
     }

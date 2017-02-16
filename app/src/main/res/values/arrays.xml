@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="UKVisaStatus">
+    <item>Uk visa Status</item>
+        <item>London</item>
+    </string-array>
+
+    <string-array name="entries_hello">
+        <item>hello</item>
+        <item>namste</item>
+        <item>wonka</item>
+    </string-array>
+</resources>
