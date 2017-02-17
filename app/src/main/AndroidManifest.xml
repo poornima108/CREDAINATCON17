@@ -26,7 +26,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs"
+            android:label="About Us"></activity>
     </application>
 
 </manifest>
