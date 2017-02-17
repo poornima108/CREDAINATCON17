@@ -26,20 +26,21 @@
             android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="30dp">
 
             <RadioButton
                 android:id="@+id/radio_button_yes"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radio_button_no"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="No"
+                android:layout_marginLeft="50dp"/>
 
         </RadioGroup>
 
@@ -164,21 +165,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textInputLayout9"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="40dp">
 
             <RadioButton
                 android:id="@+id/radio_button_yes2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radio_button_no2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="No"
+                android:layout_marginLeft="50dp"/>
 
         </RadioGroup>
 
