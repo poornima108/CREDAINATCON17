@@ -12,183 +12,196 @@
     tools:context="com.example.hp.credainatcon17.SignUpActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="wrap_content">
 
-
-        <ImageView
-            android:id="@+id/imageView2"
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_weight="3.66"
-            android:background="#FFF"
-            android:scaleType="centerInside"
-            android:src="@drawable/credai_logo1" />
+            android:layout_height="wrap_content"
+            android:text="Credai Member"
+            android:textSize="18sp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <RadioButton
+                android:id="@+id/radio_button_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/radio_button_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_group"
+            android:paddingTop="10dp"
+            android:text="Chapter Name"
+            android:textSize="18sp"/>
+
+        <Spinner
+            android:id="@+id/spinner_chapter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            tools:entries="@array/entries_hello"
+            tools:spinnerMode="dropdown" />
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/heyy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:inputType="textPersonName"
-                android:paddingTop="20dp" />
-        </android.support.design.widget.TextInputLayout>
-
-        <LinearLayout
+            android:id="@id/textInputLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="5dp"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Credai Member"
-                android:textSize="18sp" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="10dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Yes" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="No" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Chapter Name"
-                android:textSize="18sp" />
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:entries="@array/entries_hello"
-                tools:spinnerMode="dropdown" />
-
-        </LinearLayout>
-
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/email_id_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/password_register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword" />
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_below="@id/spinner_chapter_name">
 
             <EditText
                 android:id="@+id/company_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Company Name"
+                android:textColorHint="#000"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@id/textInputLayout4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout2">
 
             <EditText
+                android:id="@+id/delegate_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/phone_number"
-                android:inputType="phone" />
+                android:hint="Name"
+                android:textColorHint="#000"
+                android:inputType="textPersonName"
+                android:paddingTop="20dp" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout4">
+
+            <EditText
+                android:id="@+id/email_id_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColorHint="#000"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout5">
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textColorHint="#000"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout6">
 
             <EditText
                 android:id="@+id/dob_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
-                android:hint="@string/dob_dd_mm_yyyy" />
+                android:hint="@string/dob_dd_mm_yyyy"
+                android:textColorHint="#000"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout8"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout7">
 
             <EditText
                 android:id="@+id/passport_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Passport number"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColorHint="#000"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout9"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayout8">
 
             <EditText
                 android:id="@+id/passport_expiry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
-                android:hint="Passport Expiry" />
+                android:hint="Passport Expiry"
+                android:textColorHint="#000"/>
         </android.support.design.widget.TextInputLayout>
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:spinnerMode="dropdown"
-            tools:entries="@array/UKVisaStatus" />
-
-        <Button
-            android:id="@+id/register_button"
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_below="@id/textInputLayout9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/register"
-            android:textColor="#FFF" />
+            android:text="Credai Youth Wing Member"
+            android:textSize="18sp"
+            android:textColorHint="#000"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="40dp"
+            android:layout_below="@id/textInputLayout9">
+
+            <RadioButton
+                android:paddingTop="10dp"
+                android:id="@+id/radio_button_yes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/radio_button_no2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+
+        </RadioGroup>
 
 
-    </LinearLayout>
+
+
+
+
+    </RelativeLayout>
 </ScrollView>
