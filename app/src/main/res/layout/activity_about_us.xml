@@ -10,4 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.hp.credainatcon17.AboutUs">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine"
+        android:text="    Established in 1999, CREDAI is the apex body representing 11,500 private Real Estate developers spread across 23 state level chapters and 166 cities in India.
+
+    CREDAI is a not-for-profit company registered under Section 25 of Companies Act, 1956.
+
+    CREDAI seeks to create a favourable policy climate to ensure housing for all. CREDAI specially articulates the concerns of private housing providers.
+
+    CREDAI has become the preferred platform with regard to national discourse on Housing and Habitat through strong networking with Government, Policy Makers, Investors, Financial Institutions and Real Estate Developers.
+
+    In order to inspire confidence in the industry, CREDAI has adopted a Voluntary Code of Conduct ensuring highest ethical standards among its members. To predominantly safeguard consumer interest, CREDAI insists on setting up of Consumer Redressal Forums through all its City Level associations.
+
+    CREDAI is the preferred CSR arm of its members with Skill Development, Education Scholarships and Swachh Bharat as thematic areas."
+        android:textAlignment="gravity"
+        android:textStyle="italic"/>
+
 </RelativeLayout>
