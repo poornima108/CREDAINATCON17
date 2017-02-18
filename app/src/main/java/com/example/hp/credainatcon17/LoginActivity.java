@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText email_id, pass_word;
     private Button log_in;
-    private TextView sign_up;
+    private TextView sign_up,login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
