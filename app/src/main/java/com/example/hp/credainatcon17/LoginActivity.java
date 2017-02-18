@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText email_id, pass_word;
     private Button log_in;
-    private TextView sign_up,login;
+    private TextView sign_up;
 
 
     @Override
@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void loginUser() {
-        startActivity(new Intent(this,ContactUs.class));
+       // startActivity(new Intent(this,ContactUs.class));
 
     }
 }

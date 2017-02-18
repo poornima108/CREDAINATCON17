@@ -28,7 +28,9 @@
         </activity>
         <activity
             android:name=".AboutUs"
-            android:label="About Us"></activity>
+            android:label="About Us">
+
+        </activity>
     </application>
 
 </manifest>
