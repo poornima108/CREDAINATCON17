@@ -17,7 +17,6 @@ public class SignUpActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        Calendar =
         companyName = (EditText) findViewById(R.id.company_name);
         name = (EditText) findViewById(R.id.delegate_name);
         phoneNumber = (EditText) findViewById(R.id.phone_number);

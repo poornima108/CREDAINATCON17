@@ -31,7 +31,7 @@
             android:label="About Us" />
         <activity android:name=".Credai" />
         <activity android:name=".Helpdesk" />
-        <activity android:name=".Emergency" />
+        <activity android:name=".Emergency"/>
         <activity android:name=".ContactUs"></activity>
     </application>
 
