@@ -44,7 +44,7 @@ public class ContactUs extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Credai1(), "ONE");
         adapter.addFragment(new Helpdesk1(), "TWO");
-        adapter.addFragment(new Emergency(), "THREE");
+        adapter.addFragment(new Emerge(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
