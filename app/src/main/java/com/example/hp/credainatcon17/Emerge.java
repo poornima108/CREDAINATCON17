@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 
 
-public class Helpdesk extends Fragment {
+public class Emerge extends Fragment {
 
-    public Helpdesk() {
+    public Emerge() {
         //required empty for constructor
     }
     @Override
@@ -24,6 +24,6 @@ public class Helpdesk extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_helpdesk, container, false);
+        return inflater.inflate(R.layout.fragment_emerge, container, false);
     }
 }
