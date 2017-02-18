@@ -118,7 +118,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
                 android:hint="@string/dob_dd_mm_yyyy"
-                android:textColorHint="#000" />
+                android:textColorHint="#000"
+                android:editable="false"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -148,7 +149,8 @@
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
                 android:hint="Passport Expiry"
-                android:textColorHint="#000" />
+                android:textColorHint="#000"
+                android:editable="false"/>
         </android.support.design.widget.TextInputLayout>
 
         <TextView

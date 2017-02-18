@@ -2,6 +2,7 @@ package com.example.hp.credainatcon17;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,21 +17,18 @@ public class SignUpActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        Calendar =
         companyName = (EditText) findViewById(R.id.company_name);
-        name = (EditText) findViewById(R.id.delegate_name;
+        name = (EditText) findViewById(R.id.delegate_name);
         phoneNumber = (EditText) findViewById(R.id.phone_number);
         emailid = (EditText) findViewById(R.id.email_id_register);
         dob = (EditText) findViewById(R.id.dob_user);
         passportNumber = (EditText) findViewById(R.id.passport_number);
         passportExpiry = (EditText) findViewById(R.id.passport_expiry);
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
+        calenderOnClick();
 
     }
+
 
     public void calenderOnClick(){
         dob.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +43,12 @@ public class SignUpActivity extends AppCompatActivity{
     protected Dialog onCreateDialog(int id) {
         if (id == DIALOG) {
             return new DatePickerDialog(this, datePickerListener, year_x, month_x, day_x);
-            return null;
+
         }
+        return null;
+    }
         private DatePickerDialog.OnDateSetListener datePickerListener =new DatePickerDialog.OnDateSetListener() {
+
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month_x = month;
@@ -59,4 +60,4 @@ public class SignUpActivity extends AppCompatActivity{
         };
     }
 
-}
+
