@@ -17,6 +17,10 @@ public class SignUpActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        final Calendar calendar = Calendar.getInstance();
+        day_x = calendar.get(Calendar.DATE);
+        month_x = calendar.get(Calendar.MONTH);
+        year_x = calendar.get(Calendar.YEAR);
         companyName = (EditText) findViewById(R.id.company_name);
         name = (EditText) findViewById(R.id.delegate_name);
         phoneNumber = (EditText) findViewById(R.id.phone_number);
@@ -25,6 +29,7 @@ public class SignUpActivity extends AppCompatActivity{
         passportNumber = (EditText) findViewById(R.id.passport_number);
         passportExpiry = (EditText) findViewById(R.id.passport_expiry);
         calenderOnClick();
+        dob.setText(day_x + "/" + month_x + "/" + year_x);
 
     }
 
@@ -34,6 +39,14 @@ public class SignUpActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 showDialog(DIALOG);
+                dob.setText(day_x + "/" + month_x + "/" + year_x);
+            }
+        });
+        passportExpiry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog(DIALOG);
+                passportExpiry.setText(day_x + "/" + month_x + "/" + year_x);
             }
         });
     }
@@ -53,7 +66,7 @@ public class SignUpActivity extends AppCompatActivity{
                 month_x = month;
                 year_x = year;
                 day_x = dayOfMonth;
-                dob.setText(day_x + "/" + month_x + "/" + year_x);
+
 
             }
         };
