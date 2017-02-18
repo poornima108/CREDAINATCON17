@@ -18,15 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="149dp"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Heading"
-                android:textSize="21sp"/>
+                android:textSize="21sp" />
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/credai_logo1"/>
+                android:src="@drawable/credai_logo1" />
 
         </LinearLayout>
 

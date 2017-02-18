@@ -42,8 +42,8 @@
                 android:id="@+id/radio_button_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="50dp"
+                android:text="No" />
 
         </RadioGroup>
 
@@ -120,9 +120,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:focusable="false"
                 android:hint="@string/dob_dd_mm_yyyy"
-                android:textColorHint="#000"
-                android:focusable="false"/>
+                android:textColorHint="#000" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -151,9 +151,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:focusable="false"
                 android:hint="Passport Expiry"
-                android:textColorHint="#000"
-                android:focusable="false"/>
+                android:textColorHint="#000" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -184,8 +184,8 @@
                 android:id="@+id/radio_button_no2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="50dp"
+                android:text="No" />
 
         </RadioGroup>
 
@@ -217,21 +217,21 @@
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.12"
                 android:background="@color/colorPrimary"
                 android:text="Sign-Up"
-                android:textColor="#FFF"
-                android:layout_weight="0.12"
-                android:layout_marginLeft="20dp"/>
+                android:textColor="#FFF" />
 
             <Button
-               android:layout_marginLeft="40dp"
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="0.12"
                 android:background="@color/colorPrimary"
                 android:text="Log-In"
-                android:textColor="#FFF"
-                android:layout_weight="0.12" />
+                android:textColor="#FFF" />
 
         </LinearLayout>
 
