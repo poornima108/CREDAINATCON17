@@ -30,7 +30,7 @@
         android:layout_marginBottom="61dp"
         android:background="#FFF"
         android:scaleType="centerCrop"
-        android:src="@drawable/credai_logo1" />
+         />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout4"
