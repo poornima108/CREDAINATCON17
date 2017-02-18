@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
-public class SignUpActivity extends AppCompatActivity{
-    private int day_x,month_x,year_x;
-    static final int DIALOG = 0;
-    private EditText companyName,name,phoneNumber,emailid,dob,passportNumber,passportExpiry;
+public class SignUpActivity extends AppCompatActivity {
+    private int day_x, month_x, year_x;
+    static final int DIALOG = 0, Dialog = 1;
+    private EditText companyName, name, phoneNumber, emailid, dob, passportNumber, passportExpiry;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,24 +30,24 @@ public class SignUpActivity extends AppCompatActivity{
         passportNumber = (EditText) findViewById(R.id.passport_number);
         passportExpiry = (EditText) findViewById(R.id.passport_expiry);
         calenderOnClick();
-        dob.setText(day_x + "/" + month_x + "/" + year_x);
+
 
     }
 
 
-    public void calenderOnClick(){
+    public void calenderOnClick() {
         dob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialog(DIALOG);
-                dob.setText(day_x + "/" + month_x + "/" + year_x);
+
             }
         });
         passportExpiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog(DIALOG);
-                passportExpiry.setText(day_x + "/" + month_x + "/" + year_x);
+                showDialog(Dialog);
+
             }
         });
     }
@@ -57,19 +58,32 @@ public class SignUpActivity extends AppCompatActivity{
             return new DatePickerDialog(this, datePickerListener, year_x, month_x, day_x);
 
         }
+        if (id == Dialog) {
+            return new DatePickerDialog(this, expiryPickerListener, year_x, month_x, day_x);
+        }
         return null;
     }
-        private DatePickerDialog.OnDateSetListener datePickerListener =new DatePickerDialog.OnDateSetListener() {
 
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month_x = month;
-                year_x = year;
-                day_x = dayOfMonth;
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            month_x = month;
+            year_x = year;
+            day_x = dayOfMonth + 1;
+            dob.setText(day_x + "/" + month_x + "/" + year_x);
+        }
+    };
+    private DatePickerDialog.OnDateSetListener expiryPickerListener = new DatePickerDialog.OnDateSetListener() {
 
-            }
-        };
-    }
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            month_x = month;
+            year_x = year;
+            day_x = dayOfMonth + 1;
+            passportExpiry.setText(day_x + "/" + month_x + "/" + year_x);
+        }
+    };
+}
 
 
