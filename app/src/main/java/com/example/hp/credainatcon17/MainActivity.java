@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -22,5 +24,9 @@ public class MainActivity extends Activity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
+
     }
+
+
+
 }

@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,7 +26,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         log_in = (Button) findViewById(R.id.login_button);
         sign_up.setOnClickListener(this);
         log_in.setOnClickListener(this);
+
     }
+
+
 
     @Override
     public void onClick(View view) {
@@ -41,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void loginUser() {
-        startActivity(new Intent(this, ContactUs.class));
+        startActivity(new Intent(this, InfoActivity.class));
 
     }
 }

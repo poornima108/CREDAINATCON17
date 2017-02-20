@@ -35,7 +35,8 @@
         <activity
             android:name=".ContactUs"
             android:theme="@style/MyMaterialTheme.Base" />
-        <activity android:name=".SponsorsPage"></activity>
+        <activity android:name=".SponsorsPage" />
+        <activity android:name=".InfoActivity" />
     </application>
 
 </manifest>
