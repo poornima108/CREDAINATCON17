@@ -10,5 +10,6 @@
     <string name="welcome_to_credai">welcome to Credai</string>
     <string name="welcome_to_helpdesk">welcome to Helpdesk</string>
     <string name="welcome_to_emergency">welcome to Emergency</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
