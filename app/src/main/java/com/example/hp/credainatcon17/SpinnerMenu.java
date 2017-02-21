@@ -22,7 +22,7 @@ public class SpinnerMenu extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_chapter_name);
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerSignup_chaptername);
 
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);

@@ -21,6 +21,5 @@ public class SplashScreen3 extends AppCompatActivity {
             }
         }, SPLASH_TIME_OUT);
 
-        //test comment line
     }
 }

@@ -23,24 +23,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Credai Member"
+            android:id="@+id/txtSignup_Member"
             android:textSize="18sp" />
 
         <RadioGroup
-            android:id="@+id/credaimemberradiogroup"
+            android:id="@+id/rgSignup_member"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="30dp">
 
             <RadioButton
-                android:id="@+id/credaimemberradiogroup_yes"
+                android:id="@+id/rbtnSignup_member_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes"
                 android:checked="true" />
 
             <RadioButton
-                android:id="@+id/credaimemberradiogroup_no"
+                android:id="@+id/rbtnSignup_member_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
@@ -49,19 +50,19 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/txtSignup_chaptername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/credaimemberradiogroup"
+            android:layout_below="@id/rgSignup_member"
             android:paddingTop="10dp"
             android:text="Chapter Name"
             android:textSize="18sp" />
 
         <Spinner
-            android:id="@+id/spinner_chapter_name"
+            android:id="@+id/spinnerSignup_chaptername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView"
+            android:layout_below="@id/txtSignup_chaptername"
             tools:entries="@array/entries_hello"
             tools:spinnerMode="dropdown" />
 
@@ -69,10 +70,10 @@
             android:id="@id/textInputLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/spinner_chapter_name">
+            android:layout_below="@id/spinnerSignup_chaptername">
 
             <EditText
-                android:id="@+id/company_name"
+                android:id="@+id/edtSignup_companyname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Company Name"
@@ -87,7 +88,7 @@
             android:layout_below="@id/textInputLayout4">
 
             <EditText
-                android:id="@+id/email_id_register"
+                android:id="@+id/edtSignup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -102,7 +103,7 @@
             android:layout_below="@id/textInputLayout5">
 
             <EditText
-                android:id="@+id/phone_number"
+                android:id="@+id/edtSignup_phonenumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/phone_number"
@@ -117,7 +118,7 @@
             android:layout_below="@id/textInputLayout6">
 
             <EditText
-                android:id="@+id/dob_user"
+                android:id="@+id/edtSignup_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
@@ -133,7 +134,7 @@
             android:layout_below="@id/textInputLayout7">
 
             <EditText
-                android:id="@+id/passport_number"
+                android:id="@+id/edtSignup_passportnumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Passport number"
@@ -148,7 +149,7 @@
             android:layout_below="@id/textInputLayout8">
 
             <EditText
-                android:id="@+id/passport_expiry"
+                android:id="@+id/edtSignup_passportexpiry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_event_black_24dp"
@@ -167,7 +168,7 @@
             android:textSize="18sp" />
 
         <RadioGroup
-            android:id="@+id/credaiyouthradiogroup"
+            android:id="@+id/rgSignup_youthmember"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textInputLayout9"
@@ -175,7 +176,7 @@
             android:paddingTop="40dp">
 
             <RadioButton
-                android:id="@+id/credaiyouthradiogroup_yes"
+                android:id="@+id/rbtnSignup_youthmember_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -183,7 +184,7 @@
                 android:checked="true" />
 
             <RadioButton
-                android:id="@+id/credaiyouthradiogroup_no"
+                android:id="@+id/rbtnSignup_youthmember_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
@@ -199,7 +200,7 @@
             android:layout_below="@+id/textInputLayout2">
 
             <EditText
-                android:id="@+id/delegate_name"
+                android:id="@+id/edtSignup_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
@@ -210,13 +211,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/credaiyouthradiogroup"
+            android:layout_below="@id/rgSignup_youthmember"
             android:orientation="horizontal"
             android:padding="20dp"
             android:weightSum="1">
 
             <Button
-                android:id="@+id/usersignup"
+                android:id="@+id/btnSignup_usersignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
@@ -227,7 +228,7 @@
 
             <Button
                android:layout_marginLeft="40dp"
-                android:id="@+id/userloginredirect"
+                android:id="@+id/btnSignup_userloginredirect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"

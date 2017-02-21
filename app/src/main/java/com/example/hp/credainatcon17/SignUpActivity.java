@@ -57,9 +57,9 @@ public class SignUpActivity extends AppCompatActivity {
         dob = (EditText) findViewById(R.id.dob_user);
         passportNumber = (EditText) findViewById(R.id.passport_number);
         passportExpiry = (EditText) findViewById(R.id.passport_expiry);
-        spinner = (Spinner) findViewById(R.id.spinner_chapter_name);
-        credaiMemberRadioGroup = (RadioGroup) findViewById(R.id.credaimemberradiogroup);
-        credaiYouthMemberRadioGroup = (RadioGroup) findViewById(R.id.credaiyouthradiogroup);
+        spinner = (Spinner) findViewById(R.id.spinnerSignup_chaptername);
+        credaiMemberRadioGroup = (RadioGroup) findViewById(R.id.rgSignup_member);
+        credaiYouthMemberRadioGroup = (RadioGroup) findViewById(R.id.rgSignup_youthmember);
 
         signinBtn = (Button) findViewById(R.id.usersignup);
         loginRedirect = (Button) findViewById(R.id.userloginredirect);
