@@ -1,14 +1,21 @@
 package com.example.hp.credainatcon17;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -32,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Button loginRedirect;
     private RadioGroup credaiMemberRadioGroup;
     private RadioGroup credaiYouthMemberRadioGroup;
+    private static View appView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
         categories.add("Chapter 9");
         categories.add("Chapter 10");
         categories.add("Chapter 11");
+        categories.add("Chapter 12");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
@@ -89,6 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
         dob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                appView=view;
                 DateDialog dialog = new DateDialog();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 dialog.show(ft, "Date Picker");
@@ -97,6 +107,7 @@ public class SignUpActivity extends AppCompatActivity {
         passportExpiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                appView=view;
                 DateDialog dialog = new DateDialog();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 dialog.show(ft, "Date Picker");
@@ -162,7 +173,7 @@ public class SignUpActivity extends AppCompatActivity {
                                             databaseReference1.child("credaimember").setValue(credaimember);
                                             databaseReference1.child("credaiyouthmember").setValue(credaiyouthmember);
                                             databaseReference1.child("adminauth").setValue("pending");
-                                            databaseReference1.child("paymentstatus").setValue("pending");
+                                            databaseReference1.child("natconregistered").setValue("no");
                                         }else {
                                             Toast.makeText(this, "PLEASE ENTER A VALID EMAIL ADDRESS", Toast.LENGTH_SHORT).show();
                                         }
@@ -195,6 +206,35 @@ public class SignUpActivity extends AppCompatActivity {
     }
     public final static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+    public static class DateDialog extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+        EditText txtDate;
+        private int day;
+        private int month;
+        private int year;
+
+        public DateDialog(){
+            txtDate=(EditText)appView;
+        }
+        // public DateDialog(View view){
+        // txtDate=(EditText)view;
+        //}
+
+        @RequiresApi(api = Build.VERSION_CODES.N)
+        public Dialog onCreateDialog(Bundle savedInstanceState){
+            final Calendar c =Calendar.getInstance();
+            day = c.get(Calendar.DATE);
+            month = c.get(Calendar.MONTH);
+            year = c.get(Calendar.YEAR);
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        @Override
+        public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+            String date = day+"-"+(month+1)+"-"+year;
+            txtDate.setText(date);
+        }
     }
 }
 
