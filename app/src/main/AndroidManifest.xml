@@ -27,7 +27,8 @@
                 android:value=".LoginActivity" />
         </activity>
         <activity android:name=".SplashScreen2" />
-        <activity android:name=".SplashScreen3"></activity>
+        <activity android:name=".SplashScreen3" />
+        <activity android:name=".NatconRegister"></activity>
     </application>
 
 </manifest>
