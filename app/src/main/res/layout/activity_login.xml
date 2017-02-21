@@ -25,7 +25,7 @@
             android:layout_alignParentTop="true"
             android:background="#FFF"
             android:scaleType="fitCenter"
-            android:src="@drawable/credai_logo1" />
+            android:src="@drawable/credai_logo" />
 
 
         <android.support.design.widget.TextInputLayout

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CREDAI NATCON 17</string>
     <string name="dont_have_an_account_sign_up"><u>Don\'t have an account?Sign Up</u></string>
-    <string name="dob_dd_mm_yyyy">DOB(DD/MM/YYYY)</string>
+    <string name="dob_dd_mm_yyyy">DOB(DD-MM-YYYY)</string>
     <string name="phone_number">Phone Number</string>
     <string name="register">Register</string>
 
@@ -10,24 +10,5 @@
     <string name="welcome_to_credai">welcome to Credai</string>
     <string name="welcome_to_helpdesk">welcome to Helpdesk</string>
     <string name="welcome_to_emergency">welcome to Emergency</string>
-
-    <string-array name="chapter_names">
-        <item>hello</item>
-        <item>namste</item>
-        <item>wonka</item>
-    </string-array>
-
-    <string-array name="UKVisaStatus">
-        <item>Uk visa Status</item>
-        <item>London</item>
-    </string-array>
-    
-    <string-array name="infopage">
-        <item>Credai</item>
-        <item>Organiser</item>
-        <item>Organizing Committee</item>
-        <item>About Natcon</item>
-        <item>About London</item>d
-    </string-array>
 
 </resources>

@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "557766805027",
+    "firebase_url": "https://credai-natcom-2017-fcba9.firebaseio.com",
+    "project_id": "credai-natcom-2017-fcba9",
+    "storage_bucket": "credai-natcom-2017-fcba9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557766805027:android:f45a6fd5180335f8",
+        "android_client_info": {
+          "package_name": "com.credai.admin.natcontest1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557766805027-6r97rjn30kn9mhona4gq8l4pg3ihemq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.credai.admin.natcontest1",
+            "certificate_hash": "6C1EEDA57E46FEFF2B832158293265C49815F099"
+          }
+        },
+        {
+          "client_id": "557766805027-u3l04lf94ea9jrf7hou3umfdpf878ai9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpag4INIDUtRrKnnkfhGm7Ot-QrkHplDE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557766805027-u3l04lf94ea9jrf7hou3umfdpf878ai9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557766805027:android:5bca2ff58356778a",
+        "android_client_info": {
+          "package_name": "com.example.hp.credainatcon17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557766805027-dg9q16i0gui3tjrj5bijvl6foi1p7ugr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.credainatcon17",
+            "certificate_hash": "BAB77061E8F64ECB36B3E6D068770755B5E72B73"
+          }
+        },
+        {
+          "client_id": "557766805027-u3l04lf94ea9jrf7hou3umfdpf878ai9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpag4INIDUtRrKnnkfhGm7Ot-QrkHplDE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557766805027-u3l04lf94ea9jrf7hou3umfdpf878ai9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
