@@ -1,15 +1,5 @@
 <resources>
     <string name="app_name">CREDAI NATCON 17</string>
-    <string name="dont_have_an_account_sign_up"><u>Don\'t have an account?Sign Up</u></string>
-    <string name="dob_dd_mm_yyyy">DOB(DD-MM-YYYY)</string>
-    <string name="phone_number">Phone Number</string>
-    <string name="register">Register</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="welcome_to_credai">welcome to Credai</string>
-    <string name="welcome_to_helpdesk">welcome to Helpdesk</string>
-    <string name="welcome_to_emergency">welcome to Emergency</string>
-    <string name="title_activity_maps">Map</string>
 
 </resources>
