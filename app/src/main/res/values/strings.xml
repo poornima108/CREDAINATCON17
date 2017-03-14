@@ -115,5 +115,6 @@
     <string name="title_activity_credai_chennai">credaiChennai</string>
     <string name="title_activity_organizer2">organizer2</string>
     <string name="title_activity_about_natcon">aboutNatcon</string>
+    <string name="forgot_password">Forgot password?</string>
 
 </resources>

@@ -77,6 +77,14 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="@string/dont_have_an_account_sign_up" />
+        <TextView
+            android:id="@+id/txtLogin_forgotpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtLogin_signup"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/forgot_password" />
 
 
     </RelativeLayout>
