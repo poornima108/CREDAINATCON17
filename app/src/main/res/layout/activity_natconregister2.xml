@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+
+    tools:context="com.example.hp.credainatcon17.NatconRegister2">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_passportnumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edtNatcon_passportnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Passport Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_passportexpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:focusable="false"
+            android:layout_below="@id/Natcon_textInputLayout_passportnumber">
+
+            <EditText
+                android:id="@+id/edtNatcon_passportexpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Passport Expiry"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Natcon_textInputLayout_passportexpiry"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:text="Credai Youth Wing Member?"
+            android:textSize="18dp" />
+
+        <RadioGroup
+            android:id="@+id/rgNatcon_credaiyouthmember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Natcon_textInputLayout_passportexpiry"
+            android:orientation="horizontal"
+            android:paddingTop="40dp">
+
+
+            <RadioButton
+                android:id="@+id/rbtnNatcon_credaiyouthmember_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/rbtnNatcon_credaiyouthmember_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="No" />
+
+        </RadioGroup>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rgNatcon_credaiyouthmember"
+    android:id="@+id/txtNatcon_visastatus"
+    android:text="Visa Status"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="10dp"
+    android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/meal_preference_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnerNatcom_ukvisastatus"
+            android:text="Meal Preference"
+            android:textSize="18dp"
+            android:layout_marginLeft="4dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgNatcon_mealspreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meal_preference_text"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+
+            <RadioButton
+                android:id="@+id/rbtnNatcon_mealpreference_nonveg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Non Veg" />
+
+            <RadioButton
+                android:id="@+id/rbtnNatcon_mealpreference_veg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Veg" />
+
+
+            <RadioButton
+                android:id="@+id/rbtnNatcon_mealpreference_vegjain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Veg(Jain)" />
+
+        </RadioGroup>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_arrivalfrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgNatcon_mealspreference">
+
+            <EditText
+                android:id="@+id/edtNatcon_arrivalfrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival From"
+                android:inputType="textPersonName"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_arrivaldate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Natcon_textInputLayout_arrivalfrom">
+
+            <EditText
+                android:id="@+id/edtNatcon_arrivaldate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival Date"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:inputType="textPersonName"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_arrivalflightnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Natcon_textInputLayout_arrivaldate">
+
+            <EditText
+                android:id="@+id/edtNatcon_arrivalflightnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival Flight Number"
+                android:inputType="textPersonName"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Natcon_textInputLayout_arrivaltime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:layout_below="@+id/Natcon_textInputLayout_arrivalflightnumber">
+
+            <EditText
+                android:id="@+id/edtNatcon_arrivaltime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="Arrival Time(Local Time London)"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Need Accomodation?"
+            android:id="@+id/chkNatcon_needaccomodation"
+            android:layout_below="@id/Natcon_textInputLayout_arrivaltime"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Natcon_textInputLayout_arrivaltime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnNatcon_next2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@color/colorPrimary"
+                android:text="Next"
+                android:textColor="#FFF" />
+
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinnerNatcom_ukvisastatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtNatcon_visastatus"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
+

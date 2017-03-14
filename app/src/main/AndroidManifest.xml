@@ -13,7 +13,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/MyMaterialTheme">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,24 +30,172 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".SplashScreen2" />
-        <activity android:name=".SplashScreen3" />
-        <activity android:name=".NatconRegister" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        <activity android:name=".SplashScreen2"
+            android:theme="@style/NoActionBarTheme"/>
+        <activity android:name=".SplashScreen3"
+            android:theme="@style/NoActionBarTheme"/>
+        <activity android:name=".NatconRegister"
+            android:label="NATCON REGISTRATION"/>
+        <activity android:name=".PaymentGateway"
+            android:label="PAYMENT GATEWAY"/>
+        <activity android:name=".HomeScreen" />
+        <activity android:name=".NatconRegister2"
+            android:label="NATCON REGISTRATION"/>
+        <activity android:name=".NatconRegister3"
+            android:label="NATCON REGISTRATION"/>
+        <activity android:name=".NatconRegistrationSummary"
+            android:label="NATCON REGISTRATION SUMMARY"/>
+        <activity android:name=".NatconRegister4"
+            android:label="Room Partner Details"></activity>
+        <activity
+            android:name=".Venue_travel"
+            android:label="@string/title_activity_venue_travel"
+            />
+        <activity
+            android:name=".Transport"
+            android:label="@string/title_activity_transport"
+            />
+        <activity android:name=".Networking" />
+        <activity
+            android:name=".Sponsers"
+            android:label="@string/title_activity_sponsers"
+            />
+        <activity android:name=".Contactus" />
+        <activity
+            android:name=".Info"
+            android:label="@string/title_activity_info"
+            />
+        <activity
+            android:name=".Natcon"
+            android:label="@string/title_activity_natcon"
+            />
+        <activity
+            android:name=".Schedules"
+            android:label="@string/title_activity_schedules"
+            ></activity>
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:name=".Credai1"
+            android:label="Credai"
+            ></activity>
+
+        <activity
+            android:name=".AboutLondon"
+            android:label="About London"
+            ></activity>
+
+        <activity
+            android:name=".AboutNatcon"
+            android:label="About Natcon"
+            ></activity>
+
+        <activity
+            android:name=".AirTickets"
+            android:label="Air Tickets"
+            ></activity>
+
+        <activity
+            android:name=".CoveringLetters"
+            android:label="Covering Letters"
+            ></activity>
+
+        <activity
+            android:name=".CredaiChennai"
+            android:label="Credai Chennai"
+            ></activity>
+
+        <activity
+            android:name=".CredaiLetter"
+            android:label="Credai Letter"
+            ></activity>
+
+        <activity
+            android:name=".CredaiNationHelpdesk"
+            android:label="Credai Nation Helpdesk"
+            ></activity>
+
+        <activity
+            android:name=".Emergency"
+            android:label="Emergency"
+            ></activity>
+
+        <activity
+            android:name=".HelpDesk"
+            android:label="Helpdesk"
+            ></activity>
+
+        <activity
+            android:name=".GettingArround"
+            android:label="Getting Around"
+            ></activity>
+
+        <activity
+            android:name=".HotelHelpDesk"
+            android:label="Hotel Helpdesk"
+            ></activity>
+        <activity
+            android:name=".HotelInfo"
+            android:label="Hotel Info"
+            ></activity>
+
+        <activity
+            android:name=".IndianHighCommision"
+            android:label="Indian High Commission"
+            ></activity>
+        <activity
+            android:name=".Matrix"
+            android:label="Matrix"
+            ></activity>
+
+        <activity
+            android:name=".CredaiDelhiOffice"
+            android:label="Credai Delhi Office"
+            ></activity>
+
+        <activity
+            android:name=".Organizer"
+            android:label="Organizer"
+            ></activity>
+
+        <activity
+            android:name=".OrganizingCommittee"
+            android:label="Organizing Committee"
+            ></activity>
+
+        <activity
+            android:name=".RoomInfo"
+            android:label="Room Info"
+            ></activity>
+
+        <activity
+            android:name=".SampleVisaForm"
+            android:label="Sample Visa Form"
+            ></activity>
+
+        <activity
+            android:name=".ContactUsCredaiChennai"
+            android:label="Credai Chennai"
+            ></activity>
+
+        <activity
+            android:name=".ContactUsOrganizingCommittee"
+            android:label="Plan It"
+            ></activity>
+
+        <activity
+            android:name=".VisaRequirements"
+            android:label="Visa Requirements"
+            ></activity>
+
+        <activity
+            android:name=".VisaInfo"
+            android:label="Visa Info"
+            ></activity>
+
+        <activity
+            android:name=".VisaFormDetail"
+            android:label="Visa Form Detail"
+            ></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context="com.example.hp.credainatcon17.Emergency">
+        <ViewFlipper
+            android:id="@+id/viewFlipper_emergency"
+            android:layout_width="match_parent"
+            app:layout_heightPercent="40%"
+            android:autoStart="true"
+            android:flipInterval="2000"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img1"
+                android:adjustViewBounds="false"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img2"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img3"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img4"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img5"
+                android:scaleType="centerCrop" />
+        </ViewFlipper>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    app:layout_heightPercent="60%"
+    android:layout_below="@id/viewFlipper_emergency">
+
+    <Button
+        android:text="call 998"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmergency_call998"
+        android:layout_below="@+id/btnEmergency_call123"
+        android:layout_alignStart="@+id/btnEmergency_call123"
+        android:layout_alignLeft="@id/btnEmergency_call123"/>
+
+    <Button
+        android:text="call 123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEmergency_call123"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+</android.support.percent.PercentRelativeLayout>

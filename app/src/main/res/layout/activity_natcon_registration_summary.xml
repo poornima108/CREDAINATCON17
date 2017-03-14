@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_summary__page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.credainatcon17.NatconRegistrationSummary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_credaimember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/edtsummarypage_credaimember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Credai Member?"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_arrivaldate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/edtsummarypage_arrivaldate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival Date"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_arrivalflightnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+
+            <EditText
+                android:id="@+id/edtsummarypageflightnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival Flight Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_arrivalfrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypagearrivalfrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival From"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_arrivaltime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypagearrivaltime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arrival Time"
+                android:inputType="number"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_chapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypagechapter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Chapter"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_children"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Children?"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_companyaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_companyaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Company Address"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_companyname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etdsummarypage_companyname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Company Name"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etdsummarypage_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:hint="@string/dob_dd_mm_yyyy"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_emailid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_emailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail Id"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_galanight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_galanight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gala Night"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_mealpreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_mealpreference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Meal Preference"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nick Name"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_passportexpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_passportexpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Passport Expiry Date"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_passportnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_passportnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Passport Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pincode"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_roomtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_roomtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Room Type"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_roomtypeextranight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_roomtypeextranight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Room Type For Extra Night"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucechapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucechapter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Chapter"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucedob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucedob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce DOB"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspouceemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspouceemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Email-Id"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucemealpreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucemealpreference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Meal Preference"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Name"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucepassportnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucepassportnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Passport Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_twinspoucephonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_twinspoucephonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TwinSharing/Spouce Phone Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_typeofaccomodation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_typeofaccomodation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type Of Accomodation"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_visastatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_visastatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Visa Status"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_whatsappnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtsummarypage_whatsappnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="WhatsApp Number"
+                android:inputType="text"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/summarypage_textInputLayout_10thdinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <EditText
+                android:id="@+id/edtsummarypage10dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dinner for 10th Night(Count)"
+                android:inputType="number"
+                android:textColorHint="#000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <Button
+                android:id="@+id/btnsummarypage_editbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="editpage"
+                android:text="Edit Details"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/btnsummarypage_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/btnsummarypage_editbutton"
+                android:onClick="summaryupdate"
+                android:text="Submit" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

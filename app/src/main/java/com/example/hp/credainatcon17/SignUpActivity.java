@@ -4,10 +4,12 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -22,6 +24,11 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,17 +36,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
-    private int day_x, month_x, year_x;
-    static final int DIALOG = 0;
-    private EditText companyName, delegateName, phoneNumber, emailId, dob, passportNumber, passportExpiry;
+    private EditText companyName, delegateName, phoneNumber, emailId, dob, passportNumber, passportExpiry,passWord;
     private Spinner spinner;
-    DatabaseReference databaseReference;
+    private DatabaseReference databaseReference;
     private String chapter;
     private Button signinBtn;
     private Button loginRedirect;
     private RadioGroup credaiMemberRadioGroup;
     private RadioGroup credaiYouthMemberRadioGroup;
     private static View appView;
+    private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +54,23 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://credai-natcom-2017-fcba9.firebaseio.com/users");
+        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://credainatcon17-f96ad.firebaseio.com/users");
+        mAuth = FirebaseAuth.getInstance();
 
-
-        companyName = (EditText) findViewById(R.id.company_name);
-        delegateName = (EditText) findViewById(R.id.delegate_name);
-        phoneNumber = (EditText) findViewById(R.id.phone_number);
-        emailId = (EditText) findViewById(R.id.email_id_register);
-        dob = (EditText) findViewById(R.id.dob_user);
-        passportNumber = (EditText) findViewById(R.id.passport_number);
-        passportExpiry = (EditText) findViewById(R.id.passport_expiry);
+        companyName = (EditText) findViewById(R.id.edtSignup_companyname);
+        delegateName = (EditText) findViewById(R.id.edtSignup_name);
+        phoneNumber = (EditText) findViewById(R.id.edtSignup_phonenumber);
+        emailId = (EditText) findViewById(R.id.edtSignup_email);
+        passWord= (EditText) findViewById(R.id.edtSignup_password);
+        dob = (EditText) findViewById(R.id.edtSignup_dob);
+        passportNumber = (EditText) findViewById(R.id.edtSignup_passportnumber);
+        passportExpiry = (EditText) findViewById(R.id.edtSignup_passportexpiry);
         spinner = (Spinner) findViewById(R.id.spinnerSignup_chaptername);
         credaiMemberRadioGroup = (RadioGroup) findViewById(R.id.rgSignup_member);
         credaiYouthMemberRadioGroup = (RadioGroup) findViewById(R.id.rgSignup_youthmember);
 
-        signinBtn = (Button) findViewById(R.id.usersignup);
-        loginRedirect = (Button) findViewById(R.id.userloginredirect);
+        signinBtn = (Button) findViewById(R.id.btnSignup_usersignup);
+        loginRedirect = (Button) findViewById(R.id.btnSignup_userloginredirect);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<>();
@@ -79,13 +87,8 @@ public class SignUpActivity extends AppCompatActivity {
         categories.add("Chapter 11");
         categories.add("Chapter 12");
 
-        // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
     }
@@ -98,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
         dob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appView=view;
+                appView = view;
                 DateDialog dialog = new DateDialog();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 dialog.show(ft, "Date Picker");
@@ -107,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity {
         passportExpiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                appView=view;
+                appView = view;
                 DateDialog dialog = new DateDialog();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 dialog.show(ft, "Date Picker");
@@ -140,18 +143,24 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void validateUserDetails() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing Up Please Wait");
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
 
+        final String credaimember = ((RadioButton) findViewById(credaiMemberRadioGroup.getCheckedRadioButtonId())).getText().toString();
+        final String credaiyouthmember = ((RadioButton) findViewById(credaiYouthMemberRadioGroup.getCheckedRadioButtonId())).getText().toString();
+        final String delegatename = delegateName.getText().toString();
+        final String companyname = companyName.getText().toString();
+        final String credaichapter = chapter;
+        final String email = emailId.getText().toString();
+        final String password=passWord.getText().toString();
+        final String phonenumber = phoneNumber.getText().toString();
+        final String dateofbirth = dob.getText().toString();
+        final String passportnumber = passportNumber.getText().toString();
+        final String passportexpiry = passportExpiry.getText().toString();
 
-        String credaimember = ((RadioButton) findViewById(credaiMemberRadioGroup.getCheckedRadioButtonId())).getText().toString();
-        String credaiyouthmember = ((RadioButton) findViewById(credaiYouthMemberRadioGroup.getCheckedRadioButtonId())).getText().toString();
-        String delegatename = delegateName.getText().toString();
-        String companyname = companyName.getText().toString();
-        String credaichapter = chapter;
-        String email = emailId.getText().toString();
-        String phonenumber = phoneNumber.getText().toString();
-        String dateofbirth = dob.getText().toString();
-        String passportnumber = passportNumber.getText().toString();
-        String passportexpiry = passportExpiry.getText().toString();
         if (!credaichapter.isEmpty()) {
             if (!delegatename.isEmpty()) {
                 if (!companyname.isEmpty()) {
@@ -160,22 +169,44 @@ public class SignUpActivity extends AppCompatActivity {
                             if (!dateofbirth.isEmpty()) {
                                 if (!passportnumber.isEmpty()) {
                                     if (!passportexpiry.isEmpty()) {
-                                        if (isValidEmail(email)) {
-                                            DatabaseReference databaseReference1 = databaseReference.child(passportnumber);
-                                            databaseReference1.child("name").setValue(delegatename);
-                                            databaseReference1.child("email").setValue(email);
-                                            databaseReference1.child("dob").setValue(dateofbirth);
-                                            databaseReference1.child("companyname").setValue(companyname);
-                                            databaseReference1.child("chapter").setValue(credaichapter);
-                                            databaseReference1.child("phonenumber").setValue(phonenumber);
-                                            databaseReference1.child("passportnumber").setValue(passportnumber);
-                                            databaseReference1.child("passportexpiry").setValue(passportexpiry);
-                                            databaseReference1.child("credaimember").setValue(credaimember);
-                                            databaseReference1.child("credaiyouthmember").setValue(credaiyouthmember);
-                                            databaseReference1.child("adminauth").setValue("pending");
-                                            databaseReference1.child("natconregistered").setValue("no");
-                                        }else {
-                                            Toast.makeText(this, "PLEASE ENTER A VALID EMAIL ADDRESS", Toast.LENGTH_SHORT).show();
+                                        if (!password.isEmpty()) {
+                                            if (isValidEmail(email)) {
+                                                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                                        if (task.isSuccessful()) {
+                                                            FirebaseUser user = task.getResult().getUser();
+                                                            String userID = user.getUid().toString();
+                                                            DatabaseReference databaseReference1 = databaseReference.child(userID);
+                                                            databaseReference1.child("name").setValue(delegatename);
+                                                            databaseReference1.child("email").setValue(email);
+                                                            databaseReference1.child("password").setValue(password);
+                                                            databaseReference1.child("dob").setValue(dateofbirth);
+                                                            databaseReference1.child("companyname").setValue(companyname);
+                                                            databaseReference1.child("chapter").setValue(credaichapter);
+                                                            databaseReference1.child("phonenumber").setValue(phonenumber);
+                                                            databaseReference1.child("passportnumber").setValue(passportnumber);
+                                                            databaseReference1.child("passportexpiry").setValue(passportexpiry);
+                                                            databaseReference1.child("credaimember").setValue(credaimember);
+                                                            databaseReference1.child("credaiyouthmember").setValue(credaiyouthmember);
+                                                            databaseReference1.child("adminauth").setValue("pending");
+                                                            databaseReference1.child("natconregistered").setValue("no");
+                                                            databaseReference1.child("paymentstatus").setValue("pending");
+                                                            Toast.makeText(SignUpActivity.this, "Sign Up Successfull. Please Wait 2-3 Days For Activation Of Your Account.", Toast.LENGTH_SHORT).show();
+                                                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                                            finish();
+                                                        } else {
+                                                            Toast.makeText(SignUpActivity.this, "Not success", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }
+                                                });
+
+                                            } else {
+                                                Toast.makeText(this, "PLEASE ENTER A VALID EMAIL ADDRESS", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                        else{
+                                            Toast.makeText(this, "PLEASE ENTER YOUR PASSWORD", Toast.LENGTH_SHORT).show();
                                         }
                                     } else {
                                         Toast.makeText(this, "PLEASE SELECT YOUR PASSPORT EXPIRY DATE", Toast.LENGTH_SHORT).show();
@@ -202,11 +233,13 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "PLEASE SELECT A CHAPTER", Toast.LENGTH_SHORT).show();
         }
-
+        progressDialog.dismiss();
     }
+
     public final static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
+
     public static class DateDialog extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
         EditText txtDate;
@@ -214,16 +247,14 @@ public class SignUpActivity extends AppCompatActivity {
         private int month;
         private int year;
 
-        public DateDialog(){
-            txtDate=(EditText)appView;
+        public DateDialog() {
+            txtDate = (EditText) appView;
         }
-        // public DateDialog(View view){
-        // txtDate=(EditText)view;
-        //}
+
 
         @RequiresApi(api = Build.VERSION_CODES.N)
-        public Dialog onCreateDialog(Bundle savedInstanceState){
-            final Calendar c =Calendar.getInstance();
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
             day = c.get(Calendar.DATE);
             month = c.get(Calendar.MONTH);
             year = c.get(Calendar.YEAR);
@@ -232,7 +263,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         @Override
         public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-            String date = day+"-"+(month+1)+"-"+year;
+            String date = day + "-" + (month + 1) + "-" + year;
             txtDate.setText(date);
         }
     }

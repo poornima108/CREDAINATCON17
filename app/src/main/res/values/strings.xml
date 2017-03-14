@@ -11,5 +11,109 @@
     <string name="welcome_to_helpdesk">welcome to Helpdesk</string>
     <string name="welcome_to_emergency">welcome to Emergency</string>
     <string name="title_activity_maps">Map</string>
+    <string name="delegate_name">Delegate Name</string>
+    <string name="skip_registration">Skip Registration</string>
+    <string name="any_children">Any Children?</string>
+    <string name="chapter_name">Chapter Name</string>
+    <string name="child_dob_dd_mm_yyyy">Child DOB(dd/mm/yyyy)</string>
+    <string name="child_name">Child Name</string>
+    <string name="child_passport_number">Child Passport Number</string>
+    <string name="city">City</string>
+    <string name="company_name">Company Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="dob4_dd_mm_yyyy">DOB(dd/mm/yyyy)</string>
+    <string name="email_id">Email Id</string>
+    <string name="meal_preference">Meal Preference</string>
+    <string-array name="persons_name">
+        <item>"INFO	"</item>
+        <item>"NATCON"</item>
+        <item>"SCHEDULES"</item>
+        <item>"REGISTRATION"</item>
+        <item>"VENUE AND TRAVEL	"</item>
+        <item>"TRANSPORT INFO	"</item>
+        <item>"NETWORKING	"</item>
+        <item>"SPONSORS PAGE	"</item>
+        <item>"CONTACT US	"</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_venue_travel">Venue_travel</string>
+    <string name="title_activity_transport">Transport</string>
+    <string name="title_activity_sponsers">Sponsers</string>
+    <string name="title_activity_info">Info</string>
+    <string name="title_activity_natcon">Natcon</string>
+    <string name="title_activity_schedules">Schedules</string>
+
+    <string-array name="header_title">
+        <item> 13 AUG </item>
+        <item> 14 AUG </item>
+        <item> 15 AUG </item>
+    </string-array>
+
+    <string-array name="h1_items">
+        <item> event 1 </item>
+        <item> event 2 </item>
+        <item> event 3 </item>
+    </string-array>
+    <string-array name="h2_items">
+        <item> event 4 </item>
+        <item> event 5 </item>
+        <item> event 6 </item>
+    </string-array>
+    <string-array name="h3_items">
+        <item> event 7 </item>
+        <item> event 8 </item>
+        <item> event 9 </item>
+    </string-array>
+
+    <string-array name="sponsers_name">
+        <item>"ANCHOR	"</item>
+        <item>"LEXUS"</item>
+    </string-array>
+
+    <string-array name="venue_name">
+        <item>"Hotel info"</item>
+        <item>"Room info"</item>
+        <item>"Air tickets"</item>
+        <item>"Visa information"</item>
+        <item>"Matrix"</item>
+    </string-array>
+    <string-array name="helpdesk_submenu">
+        <item>"Covering letters for Visa"</item>
+        <item>"Visa requirements docs"</item>
+        <item>"CREDAI letter for Visa"</item>
+        <item>"Visa form details"</item>
+        <item>"Sample visa form"</item>
+    </string-array>
+
+    <string-array name="contact_name">
+        <item>"CREDAI Delhi office	"</item>
+        <item>"organising agency"</item>
+        <item>"CREDAI Chennai"</item>
+        <item>"Help Desk"</item>
+        <item>"Emergency"</item>
+    </string-array>
+    <string-array name="contacthelpdesk_submenu">
+        <item>"CREDAI Natcon help desk at London Heathrow Airport"</item>
+        <item>"Getting around London Heathrow Airport"</item>
+        <item>"Hotel help desk"</item>
+        <item>"Indian High Commission"</item>
+    </string-array>
+
+    <string-array name="info_name">
+        <item>"CREDAI"</item>
+        <item>"Organizer"</item>
+        <item>"Organizing Committee"</item>
+        <item>"About Natcon"</item>
+        <item>"About London"</item>
+    </string-array>
+    <string-array name="infohelpdesk_submenu">
+        <item>"CREDAI - CHENNAI"</item>
+    </string-array>
+    <string name="title_activity_credai_chennai">credaiChennai</string>
+    <string name="title_activity_organizer2">organizer2</string>
+    <string name="title_activity_about_natcon">aboutNatcon</string>
 
 </resources>

@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <!-- windows new style -->
-    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
 
