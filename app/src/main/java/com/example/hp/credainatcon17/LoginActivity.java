@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Signing In Please Wait");
         progressDialog.setCanceledOnTouchOutside(false);
@@ -53,56 +54,62 @@ public class LoginActivity extends AppCompatActivity {
         pass_word = (EditText) findViewById(R.id.edtLogin_password);
         log_in = (Button) findViewById(R.id.LoginActivityLoginButton);
         signUp = (TextView) findViewById(R.id.txtLogin_signup);
-
-        databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://credainatcon17-f96ad.firebaseio.com/users");
+        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://credainatcon17-f96ad.firebaseio.com/users");
 
         mAuthListner = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                ConnectivityManager cm = (ConnectivityManager) LoginActivity.this.getSystemService(Context.CONNECTIVITY_SERVICE);
+                final NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
                 if (firebaseAuth.getCurrentUser() != null) {
-                    String userId = firebaseAuth.getCurrentUser().getUid().toString();
-                    databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            handelLogin(dataSnapshot);
-                            progressDialog.dismiss();
-                        }
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                        }
-                    });
-                }else {
+                    if (activeNetwork != null) {
+                        String userId = firebaseAuth.getCurrentUser().getUid().toString();
+                        databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                handelLogin(dataSnapshot);
+                                progressDialog.dismiss();
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                            }
+                        });
+                    } else {
+                        Toast.makeText(LoginActivity.this, "PLEASE CONNECT TO INTERNET AND TRY AGAIN.", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "YOU ARE NOT LOGED IN", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
 
             }
         };
-
     }
+
+
     private void handelLogin(DataSnapshot dataSnapshot) {
-        if(dataSnapshot.child("adminauth").getValue().toString().equals("pending")){
+        if (dataSnapshot.child("adminauth").getValue().toString().equals("pending")) {
             Toast.makeText(LoginActivity.this, "ADMIN AUTHORIZATION PENDING. TRY AGAIN LATER", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
-        }
-        else if(dataSnapshot.child("adminauth").getValue().toString().equals("approved")){
-            if(dataSnapshot.child("natconregistered").getValue().toString().equals("no")){
+        } else if (dataSnapshot.child("adminauth").getValue().toString().equals("approved")) {
+            if (dataSnapshot.child("natconregistered").getValue().toString().equals("no")) {
                 startActivity(new Intent(LoginActivity.this, NatconRegister.class));
                 finish();
-            }
-            else if(dataSnapshot.child("natconregistered").getValue().toString().equals("yes")){
+            } else if (dataSnapshot.child("natconregistered").getValue().toString().equals("yes")) {
                 if (dataSnapshot.child("paymentstatus").getValue().toString().equals("pending")) {
                     startActivity(new Intent(LoginActivity.this, PaymentGateway.class));
-                }
-                else if(dataSnapshot.child("paymentstatus").getValue().toString().equals("approved")){
-                    startActivity(new Intent(LoginActivity.this,HomeScreen.class));
+                } else if (dataSnapshot.child("paymentstatus").getValue().toString().equals("approved")) {
+                    startActivity(new Intent(LoginActivity.this, HomeScreen.class));
                 }
             }
-        }
-        else if(dataSnapshot.child("adminauth").getValue().toString().equals("denied")){
+        } else if (dataSnapshot.child("adminauth").getValue().toString().equals("denied")) {
             Toast.makeText(LoginActivity.this, "YOU HAVE BEEN DENIED ACCESS TO THIS APP", Toast.LENGTH_SHORT).show();
             FirebaseAuth.getInstance().signOut();
         }
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -110,8 +117,14 @@ public class LoginActivity extends AppCompatActivity {
         log_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ConnectivityManager cm = (ConnectivityManager) LoginActivity.this.getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                if (activeNetwork != null) {
+                    startSignIn();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Internet Not Available Please Turn On Your Internet", Toast.LENGTH_SHORT).show();
+                }
 
-                startSignIn();
             }
         });
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -124,18 +137,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startSignIn() {
+        progressDialog.show();
         String email = email_id.getText().toString();
         String password = pass_word.getText().toString();
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-
-            Toast.makeText(this, "Fields Are Empty", Toast.LENGTH_SHORT).show();
-        }
-        else {
-
-            ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-            if (activeNetwork != null) {
+            Toast.makeText(LoginActivity.this, "Fields Are Empty", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
+        } else {
             if (isValidEmail(email)) {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -145,19 +154,18 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         if (!task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Username or Password is invalid please enter a valid username or password", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                         }
                     }
                 });
-            }
-            else {
+            } else {
+                progressDialog.dismiss();
                 Toast.makeText(this, "PLEASE ENTER A VALID EMAIL", Toast.LENGTH_SHORT).show();
             }
         }
-            else{
-                Toast.makeText(this, "Internet Not Available Please Turn On Your Internet", Toast.LENGTH_SHORT).show();
-            }
-        }
     }
+
+
     public final static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
@@ -165,5 +173,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
+    }
+
+    public void forgotPassword(View view) {
+
+        startActivity(new Intent(this, ForgotLoginPassword.class));
     }
 }

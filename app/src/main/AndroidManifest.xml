@@ -30,172 +30,129 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
-        <activity android:name=".SplashScreen2"
-            android:theme="@style/NoActionBarTheme"/>
-        <activity android:name=".SplashScreen3"
-            android:theme="@style/NoActionBarTheme"/>
-        <activity android:name=".NatconRegister"
-            android:label="NATCON REGISTRATION"/>
-        <activity android:name=".PaymentGateway"
-            android:label="PAYMENT GATEWAY"/>
+        <activity
+            android:name=".SplashScreen2"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".SplashScreen3"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".NatconRegister"
+            android:label="NATCON REGISTRATION" />
+        <activity
+            android:name=".PaymentGateway"
+            android:label="PAYMENT GATEWAY" />
         <activity android:name=".HomeScreen" />
-        <activity android:name=".NatconRegister2"
-            android:label="NATCON REGISTRATION"/>
-        <activity android:name=".NatconRegister3"
-            android:label="NATCON REGISTRATION"/>
-        <activity android:name=".NatconRegistrationSummary"
-            android:label="NATCON REGISTRATION SUMMARY"/>
-        <activity android:name=".NatconRegister4"
-            android:label="Room Partner Details"></activity>
+        <activity
+            android:name=".NatconRegister2"
+            android:label="NATCON REGISTRATION" />
+        <activity
+            android:name=".NatconRegister3"
+            android:label="NATCON REGISTRATION" />
+        <activity
+            android:name=".NatconRegistrationSummary"
+            android:label="NATCON REGISTRATION SUMMARY" />
+        <activity
+            android:name=".NatconRegister4"
+            android:label="Room Partner Details" />
         <activity
             android:name=".Venue_travel"
-            android:label="@string/title_activity_venue_travel"
-            />
+            android:label="@string/title_activity_venue_travel" />
         <activity
             android:name=".Transport"
-            android:label="@string/title_activity_transport"
-            />
+            android:label="@string/title_activity_transport" />
         <activity android:name=".Networking" />
         <activity
             android:name=".Sponsers"
-            android:label="@string/title_activity_sponsers"
-            />
+            android:label="@string/title_activity_sponsers" />
         <activity android:name=".Contactus" />
         <activity
             android:name=".Info"
-            android:label="@string/title_activity_info"
-            />
+            android:label="@string/title_activity_info" />
         <activity
             android:name=".Natcon"
-            android:label="@string/title_activity_natcon"
-            />
+            android:label="@string/title_activity_natcon" />
         <activity
             android:name=".Schedules"
-            android:label="@string/title_activity_schedules"
-            ></activity>
-
+            android:label="@string/title_activity_schedules" />
         <activity
             android:name=".Credai1"
-            android:label="Credai"
-            ></activity>
-
+            android:label="Credai" />
         <activity
             android:name=".AboutLondon"
-            android:label="About London"
-            ></activity>
-
+            android:label="About London" />
         <activity
             android:name=".AboutNatcon"
-            android:label="About Natcon"
-            ></activity>
-
+            android:label="About Natcon" />
         <activity
             android:name=".AirTickets"
-            android:label="Air Tickets"
-            ></activity>
-
+            android:label="Air Tickets" />
         <activity
             android:name=".CoveringLetters"
-            android:label="Covering Letters"
-            ></activity>
-
+            android:label="Covering Letters" />
         <activity
             android:name=".CredaiChennai"
-            android:label="Credai Chennai"
-            ></activity>
-
+            android:label="Credai Chennai" />
         <activity
             android:name=".CredaiLetter"
-            android:label="Credai Letter"
-            ></activity>
-
+            android:label="Credai Letter" />
         <activity
             android:name=".CredaiNationHelpdesk"
-            android:label="Credai Nation Helpdesk"
-            ></activity>
-
+            android:label="Credai Nation Helpdesk" />
         <activity
             android:name=".Emergency"
-            android:label="Emergency"
-            ></activity>
-
+            android:label="Emergency" />
         <activity
             android:name=".HelpDesk"
-            android:label="Helpdesk"
-            ></activity>
-
+            android:label="Helpdesk" />
         <activity
             android:name=".GettingArround"
-            android:label="Getting Around"
-            ></activity>
-
+            android:label="Getting Around" />
         <activity
             android:name=".HotelHelpDesk"
-            android:label="Hotel Helpdesk"
-            ></activity>
+            android:label="Hotel Helpdesk" />
         <activity
             android:name=".HotelInfo"
-            android:label="Hotel Info"
-            ></activity>
-
+            android:label="Hotel Info" />
         <activity
             android:name=".IndianHighCommision"
-            android:label="Indian High Commission"
-            ></activity>
+            android:label="Indian High Commission" />
         <activity
             android:name=".Matrix"
-            android:label="Matrix"
-            ></activity>
-
+            android:label="Matrix" />
         <activity
             android:name=".CredaiDelhiOffice"
-            android:label="Credai Delhi Office"
-            ></activity>
-
+            android:label="Credai Delhi Office" />
         <activity
             android:name=".Organizer"
-            android:label="Organizer"
-            ></activity>
-
+            android:label="Organizer" />
         <activity
             android:name=".OrganizingCommittee"
-            android:label="Organizing Committee"
-            ></activity>
-
+            android:label="Organizing Committee" />
         <activity
             android:name=".RoomInfo"
-            android:label="Room Info"
-            ></activity>
-
+            android:label="Room Info" />
         <activity
             android:name=".SampleVisaForm"
-            android:label="Sample Visa Form"
-            ></activity>
-
+            android:label="Sample Visa Form" />
         <activity
             android:name=".ContactUsCredaiChennai"
-            android:label="Credai Chennai"
-            ></activity>
-
+            android:label="Credai Chennai" />
         <activity
             android:name=".ContactUsOrganizingCommittee"
-            android:label="Plan It"
-            ></activity>
-
+            android:label="Plan It" />
         <activity
             android:name=".VisaRequirements"
-            android:label="Visa Requirements"
-            ></activity>
-
+            android:label="Visa Requirements" />
         <activity
             android:name=".VisaInfo"
-            android:label="Visa Info"
-            ></activity>
-
+            android:label="Visa Info" />
         <activity
             android:name=".VisaFormDetail"
-            android:label="Visa Form Detail"
-            ></activity>
+            android:label="Visa Form Detail" />
+        <activity android:name=".ForgotLoginPassword" />
+        <activity android:name=".SplashScreen1"
+            android:theme="@style/NoActionBarTheme"/>
     </application>
 
 </manifest>

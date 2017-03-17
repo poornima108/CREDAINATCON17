@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.hp.credainatcon17.NatconRegister3">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <Button
             android:id="@+id/btnNatcon_nohotelregistration"
@@ -28,14 +28,23 @@
 
         <TextView
             android:id="@+id/typeofroomsharing_textview"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/chkNatcon_credaiyouthmember"
             android:text="Type of Accomodation" />
 
+        <TextView
+            android:id="@+id/typeofroomsharingprice_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chkNatcon_credaiyouthmember"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/typeofroomsharing_textview"
+            android:text="Type of Room" />
+
         <RadioGroup
             android:id="@+id/rgNatcon_typeofroomsharing"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/typeofroomsharing_textview"
             android:layout_marginTop="10dp"
@@ -51,6 +60,7 @@
                 android:id="@+id/rbtnNatcon_typeofroomsharing_singleoccupancy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Single Occupancy" />
 
             <RadioButton
@@ -61,153 +71,41 @@
         </RadioGroup>
 
         <RadioGroup
-            android:id="@+id/rgNatcon_twinsharingprice"
+            android:id="@+id/rgNatcon_typeofroomsharingprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
+            android:layout_below="@id/typeofroomsharing_textview"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/rgNatcon_typeofroomsharing"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RadioButton
-                android:id="@+id/rbtnNatcon_twinsharing_superior"
+                android:id="@+id/rbtnNatcon_typeofroomsharingprice_superior"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Superior (INR 100000)" />
+                android:text="Superior (INR 110000)" />
 
             <RadioButton
-                android:id="@+id/rbtnNatcon_twinsharing_studio"
+                android:id="@+id/rbtnNatcon_typeofroomsharingprice_studio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Studio (INR 110000)" />
+                android:text="Studio (INR 100000)" />
         </RadioGroup>
 
-        <RadioGroup
-            android:id="@+id/rgNatcon_twinsharingpricediscounted"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone">
 
-            <RadioButton
-                android:id="@+id/rbtnNatcon_twinsharing_superior_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Superior (INR 95000)" />
 
-            <RadioButton
-                android:id="@+id/rbtnNatcon_twinsharing_studio_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Studio (INR 109500)" />
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/rgNatcon_singleOccupencyprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <RadioButton
-                android:id="@+id/rgNatcon_singleOccupencyprice_superior"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Superior (INR 120000)" />
-
-            <RadioButton
-                android:id="@+id/rgNatcon_singleOccupencyprice_studio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Studio (INR 135000)" />
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/rgNatcon_singleOccupencypricediscounted"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone"
-
-            >
-
-            <RadioButton
-                android:id="@+id/rgNatcon_singleOccupencyprice_superior_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Superior (INR 115000)" />
-
-            <RadioButton
-                android:id="@+id/rgNatcon_singleOccupencyprice_studio_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Studio (INR 130000)" />
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/rgNatcon_spouceOccupencyprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <RadioButton
-                android:id="@+id/rgNatcon_spouceOccupencyprice_superior"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Superior (INR 125000)" />
-
-            <RadioButton
-                android:id="@+id/rgNatcon_spouceOccupencyprice_studio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Studio (INR 140000)" />
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/rgNatcon_spouceOccupencypricediscounted"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <RadioButton
-                android:id="@+id/rgNatcon_spouceOccupencyprice_superior_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Superior (INR 120000)" />
-
-            <RadioButton
-                android:id="@+id/rgNatcon_spouceOccupencyprice_studio_discounted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Studio (INR 135000)" />
-        </RadioGroup>
         <TextView
             android:id="@+id/room_extra_night_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="10dp"
             android:text="Room For Extra Night if needed (09/08/2017)"
-            android:visibility="gone" />
+            android:visibility="visible" />
         <RadioGroup
             android:id="@+id/rgNatcon_extranight"
             android:layout_width="wrap_content"
@@ -215,20 +113,22 @@
             android:layout_below="@id/room_extra_night_textview"
             android:layout_marginTop="5dp"
             android:orientation="vertical"
-            android:visibility="gone"
+            android:visibility="visible"
             >
 
             <RadioButton
                 android:id="@+id/rbtnNatcon_extranight_superior"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Superior (INR 17500)" />
+                android:text="Superior (INR 17500)"
+                android:enabled="false"/>
 
             <RadioButton
                 android:id="@+id/rbtnNatcon_extranight_studio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Studio (INR 21500)" />
+                android:text="Studio (INR 21500)"
+                android:enabled="false"/>
 
         </RadioGroup>
 
@@ -246,10 +146,10 @@
             android:id="@+id/extranight_dinner_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="180dp"
+            android:layout_below="@id/rgNatcon_extranight"
+            android:layout_marginTop="10dp"
             android:text="Dinner for extra night (Spouse, Children etc)"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/extranight_dinner_textview_10th"
@@ -259,86 +159,86 @@
             android:layout_below="@+id/extranight_dinner_textview"
             android:layout_marginTop="12dp"
             android:text="10 Th August 2017 – INR 15000 (Per Head)"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btnNatcon_extranightdinner_10th_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="240dp"
+            android:layout_below="@id/extranight_dinner_textview_10th"
+            android:layout_marginTop="10dp"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="-"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/txtNatcon_extranightdinner_10th"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
+            android:layout_below="@id/extranight_dinner_textview_10th"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/btnNatcon_extranightdinner_10th_minus"
             android:text="0"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btnNatcon_extranightdinner_10th_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
+            android:layout_below="@id/extranight_dinner_textview_10th"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/txtNatcon_extranightdinner_10th"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="+"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/gala_dinner_textview_11th"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="285dp"
+            android:layout_below="@id/btnNatcon_extranightdinner_10th_minus"
+            android:layout_marginTop="10dp"
             android:text="11 th Gala Dinner (Above 18yrs of age only) (Per Head)"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btnNatcon_galadinner_11th_minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
-            android:layout_marginTop="310dp"
+            android:layout_below="@id/gala_dinner_textview_11th"
+            android:layout_marginTop="10dp"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="-"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/txtNatcon_galadinner_11th"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
+            android:layout_below="@id/gala_dinner_textview_11th"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/btnNatcon_galadinner_11th_minus"
             android:text="0"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btnNatcon_galadinner_11th_plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_typeofroomsharing"
+            android:layout_below="@id/gala_dinner_textview_11th"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/txtNatcon_galadinner_11th"
             android:minHeight="0dp"
             android:minWidth="0dp"
             android:text="+"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/btnNatcon_next3"
@@ -349,9 +249,5 @@
             android:layout_marginTop="10dp"
             android:onClick="Next3"
             android:text="Next" />
-
-
     </RelativeLayout>
-
-
 </ScrollView>

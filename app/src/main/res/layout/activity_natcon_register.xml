@@ -9,9 +9,10 @@
     tools:context="com.example.hp.credainatcon17.NatconRegister">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
@@ -25,7 +26,6 @@
             android:id="@+id/txtNatcon_credaimember"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnNatcon_skipregistration"
             android:layout_marginTop="10dp"
             android:text="Credai Member"
             android:textSize="18sp" />
@@ -34,7 +34,6 @@
             android:id="@+id/rgNatcon_credaimember"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtNatcon_credaimember"
             android:orientation="horizontal">
 
             <RadioButton
@@ -57,7 +56,6 @@
             android:id="@+id/txtNatcon_chaptername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rgNatcon_credaimember"
             android:paddingTop="10dp"
             android:text="Chapter Name"
             android:textSize="18sp" />
@@ -66,15 +64,13 @@
             android:id="@+id/spinnerNatcon_chaptername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtNatcon_chaptername"
-            tools:entries="@array/entries_hello"
-            tools:spinnerMode="dropdown" />
+            tools:spinnerMode="dropdown"
+            android:entries="@array/categoriesChapter"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_company_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/spinnerNatcon_chaptername">
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/edtNatcon_companyname"
@@ -89,8 +85,7 @@
             android:id="@+id/Natcon_textInputLayout_companyaddress1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/Natcon_textInputLayout_company_name">
+            android:layout_alignParentStart="true">
 
             <EditText
                 android:id="@+id/edtNatcon_companyaddress1"
@@ -104,8 +99,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_companyaddress2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_companyaddress1">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtNatcon_companyaddress2"
@@ -115,12 +109,24 @@
                 android:inputType="text"
                 android:textColorHint="#000" />
         </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/txtNatcon_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="State"
+            android:textSize="18sp" />
+        <Spinner
+            android:id="@+id/spinnerNatcon_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:spinnerMode="dropdown"
+            android:entries="@array/categoriesState"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_city"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_companyaddress2">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtNatcon_city"
@@ -130,28 +136,10 @@
                 android:inputType="text"
                 android:textColorHint="#000" />
         </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/Natcon_textInputLayout_state"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_city">
-
-            <EditText
-                android:id="@+id/edtNatcon_state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="State"
-                android:inputType="text"
-                android:textColorHint="#000" />
-        </android.support.design.widget.TextInputLayout>
-
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_pincode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_state">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtNatcon_pincode"
@@ -165,8 +153,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_delegatename"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_pincode">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etdNatcon_delegatename"
@@ -180,8 +167,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_delegatenickname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_delegatename">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etdNatcon_delegatenickname"
@@ -195,8 +181,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_dob"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_delegatenickname">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etdNatcon_dob"
@@ -211,8 +196,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_emailid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_dob">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etdNatcon_emailid"
@@ -226,8 +210,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_phonenumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_emailid">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtdNatcon_phonenumber"
@@ -241,8 +224,7 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_whatsappnumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_phonenumber">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/etdNatcon_whatsappnumber"
@@ -255,23 +237,20 @@
 
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_whatsappnumber"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="30dp">
 
             <Button
                 android:id="@+id/btnNatcon_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
                 android:background="@color/colorPrimary"
                 android:text="Next"
+                android:layout_centerHorizontal="true"
                 android:textColor="#FFF" />
 
         </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>
 

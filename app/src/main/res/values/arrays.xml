@@ -1,4 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<string-array name="categoriesChapter">
+    <item>Chapter 1</item>
+    <item>Chapter 2</item>
+    <item>Chapter 3</item>
+    <item>Chapter 4</item>
+    <item>Chapter 5</item>
+    <item>Chapter 6</item>
+    <item>Chapter 7</item>
+    <item>Chapter 8</item>
+    <item>Chapter 1</item>
+    <item>Chapter 2</item>
+    <item>Chapter 3</item>
+    <item>Chapter 4</item>
+    <item>Chapter 5</item>
+    <item>Chapter 6</item>
+    <item>Chapter 7</item>
+    <item>Chapter 8</item>
+    <item>Chapter 1</item>
+    <item>Chapter 2</item>
+    <item>Chapter 3</item>
+    <item>Chapter 4</item>
+    <item>Chapter 5</item>
+    <item>Chapter 6</item>
+    <item>Chapter 7</item>
+    <item>Chapter 8</item>
+    <item>Chapter 1</item>
+    <item>Chapter 2</item>
+    <item>Chapter 3</item>
+    <item>Chapter 4</item>
+    <item>Chapter 5</item>
+    <item>Chapter 6</item>
+    <item>Chapter 7</item>
+    <item>Chapter 8</item>
+</string-array>
 
+    <string-array name="categoriesState">
+        <item>Andra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Orissa</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Tripura</item>
+        <item>Uttaranchal</item>
+        <item>Uttar Pradesh</item>
+        <item>West Bengal</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Chandigarh</item>
+        <item>Dadar and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Lakshadeep</item>
+        <item>Pondicherry</item>
+    </string-array>
+
+    <string-array name="categoriesVisa">
+<item>Status 1</item>
+        <item>Status 2</item>
+        <item>Status 3</item>
+    </string-array>
 </resources>

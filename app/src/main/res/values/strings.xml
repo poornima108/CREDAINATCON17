@@ -116,5 +116,13 @@
     <string name="title_activity_organizer2">organizer2</string>
     <string name="title_activity_about_natcon">aboutNatcon</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="emailerror">PLEASE ENTER CORRECT EMAIL</string>
+    <string name="nameerror">PLEASE ENTER VALID NAME</string>
+    <string name="phonenumbererror">PLEASE ENTER VALID NUMBER.</string>
+    <string name="dateerror">PLEASE ENTER A VALID DATE</string>
+    <string name="pinerror">PLEASE ENTER VALID PINCODE</string>
+    <string name="passporterror">PLEASE ENTER VALID PASSPORT NUMBER</string>
+    <string name="flightnumbererror">PLEASE ENTER VALID FLIGHT NUMBER</string>
+    <string name="arrivaltimeerror">PLEASE ENTER A VALID TIME</string>
 
 </resources>

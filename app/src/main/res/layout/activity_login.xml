@@ -84,7 +84,8 @@
             android:layout_below="@id/txtLogin_signup"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="@string/forgot_password" />
+            android:text="@string/forgot_password"
+            android:onClick="forgotPassword"/>
 
 
     </RelativeLayout>

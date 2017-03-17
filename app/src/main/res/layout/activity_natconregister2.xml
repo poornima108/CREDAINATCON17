@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="5dp">
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/Natcon_textInputLayout_passportnumber"
@@ -82,15 +83,6 @@
                 android:text="No" />
 
         </RadioGroup>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/rgNatcon_credaiyouthmember"
-    android:id="@+id/txtNatcon_visastatus"
-    android:text="Visa Status"
-    android:layout_marginLeft="4dp"
-    android:layout_marginTop="10dp"
-    android:textSize="18dp" />
 
         <TextView
             android:id="@+id/meal_preference_text"
@@ -118,10 +110,17 @@
                 android:text="Non Veg" />
 
             <RadioButton
+                android:id="@+id/rbtnNatcon_mealpreference_nonveghalal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:text="Non Veg(Halal)" />
+
+            <RadioButton
                 android:id="@+id/rbtnNatcon_mealpreference_veg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="0dp"
                 android:text="Veg" />
 
 
@@ -129,8 +128,9 @@
                 android:id="@+id/rbtnNatcon_mealpreference_vegjain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="0dp"
                 android:text="Veg(Jain)" />
+
 
         </RadioGroup>
 
@@ -208,32 +208,40 @@
             android:id="@+id/chkNatcon_needaccomodation"
             android:layout_below="@id/Natcon_textInputLayout_arrivaltime"/>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Natcon_textInputLayout_arrivaltime"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+
 
 
             <Button
                 android:id="@+id/btnNatcon_next2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
                 android:background="@color/colorPrimary"
                 android:text="Next"
-                android:textColor="#FFF" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@id/chkNatcon_needaccomodation"
+                android:textColor="#FFF"
+                />
 
-        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNatcon_visastatus"
+            android:text="Visa Status"
+            android:layout_marginLeft="4dp"
+            android:textSize="18dp"
+            android:layout_below="@+id/rgNatcon_credaiyouthmember"
+            android:layout_alignParentEnd="true" />
 
         <Spinner
             android:id="@+id/spinnerNatcom_ukvisastatus"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/txtNatcon_visastatus"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:entries="@array/categoriesVisa"/>
 
 
     </RelativeLayout>

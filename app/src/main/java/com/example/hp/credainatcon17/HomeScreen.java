@@ -1,6 +1,10 @@
 package com.example.hp.credainatcon17;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +32,7 @@ public class HomeScreen extends AppCompatActivity {
             R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher,
             R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
     private String[] name;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,11 @@ public class HomeScreen extends AppCompatActivity {
             count++;
             list.add(contact);
         }
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing In Please Wait");
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
         String userid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://credainatcon17-f96ad.firebaseio.com/users/" + userid);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView_home_screen);
@@ -63,22 +73,32 @@ public class HomeScreen extends AppCompatActivity {
                             Intent intent = new Intent(HomeScreen.this, Schedules.class);
                             startActivity(intent);
                         } else if (position == 3) {
-                            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.child("natconregistered").getValue().toString().equals("yes")) {
-                                        Toast.makeText(HomeScreen.this, "ALREADY REGISTERED FOR NATCON17", Toast.LENGTH_LONG).show();
-                                    } else {
-                                        Intent intent = new Intent(HomeScreen.this, NatconRegister.class);
-                                        startActivity(intent);
+                            progressDialog.show();
+                            ConnectivityManager cm = (ConnectivityManager) HomeScreen.this.getSystemService(Context.CONNECTIVITY_SERVICE);
+                            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                            if (activeNetwork != null) {
+                                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                        if (dataSnapshot.child("natconregistered").getValue().toString().equals("yes")) {
+                                            Toast.makeText(HomeScreen.this, "ALREADY REGISTERED FOR NATCON17", Toast.LENGTH_LONG).show();
+                                            progressDialog.dismiss();
+                                        } else {
+                                            Intent intent = new Intent(HomeScreen.this, NatconRegister.class);
+                                            progressDialog.dismiss();
+                                            startActivity(intent);
+                                        }
                                     }
-                                }
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
+                                    }
+                                });
+                            }else {
+                                Toast.makeText(HomeScreen.this, "PLEASE CONNECT TO INTERNET AND TRY AGAIN.", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }
                         } else if (position == 4) {
                             Intent intent = new Intent(HomeScreen.this, Venue_travel.class);
                             startActivity(intent);
@@ -101,6 +121,7 @@ public class HomeScreen extends AppCompatActivity {
         );
 
     }
+
     boolean twice = false;
 
     @Override

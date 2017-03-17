@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="forgot_password">Forgot password?</string>
+    <string name="nameerror">PLEASE ENTER VALID NAME</string>
+    <string name="phonenumbererror">PLEASE ENTER VALID NUMBER.</string>
+    <string name="dateerror">PLEASE ENTER A VALID DATE</string>
 </resources>
