@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.widget.Toast;
 
-public class Transport extends AppCompatActivity {
+public class Transport extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transport);
+        getLayoutInflater().inflate(R.layout.activity_transport, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         Toast toast = Toast.makeText(getApplicationContext(), "transport", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

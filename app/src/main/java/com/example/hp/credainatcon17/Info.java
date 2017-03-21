@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Info extends AppCompatActivity {
+public class Info extends BaseActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -23,8 +23,9 @@ public class Info extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
-
+        getLayoutInflater().inflate(R.layout.activity_info, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
         Toast toast = Toast.makeText(getApplicationContext(), "Info", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
         toast.show();

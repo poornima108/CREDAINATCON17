@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Contactus extends AppCompatActivity {
+public class Contactus extends BaseActivity{
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -22,7 +22,10 @@ public class Contactus extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactus);
+
+        getLayoutInflater().inflate(R.layout.activity_contactus, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         Toast toast = Toast.makeText(getApplicationContext(), "contactus", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

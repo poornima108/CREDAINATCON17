@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Schedules extends AppCompatActivity {
+public class Schedules extends BaseActivity {
 
     ExpandableListView expandableListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schedules);
+        getLayoutInflater().inflate(R.layout.activity_schedules, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         Toast toast = Toast.makeText(getApplicationContext(), "Scedules", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

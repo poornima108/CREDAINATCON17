@@ -30,6 +30,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
         </activity>
+
+        <activity
+            android:name="com.example.hp.credainatcon17.BaseActivity"
+            android:label="@string/app_name" >
+        </activity>
         <activity
             android:name=".SplashScreen2"
             android:theme="@style/NoActionBarTheme" />
@@ -42,7 +47,9 @@
         <activity
             android:name=".PaymentGateway"
             android:label="PAYMENT GATEWAY" />
-        <activity android:name=".HomeScreen" />
+        <activity
+            android:name=".HomeScreen"
+            android:label="Home"/>
         <activity
             android:name=".NatconRegister2"
             android:label="NATCON REGISTRATION" />

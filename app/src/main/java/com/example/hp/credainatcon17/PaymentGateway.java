@@ -24,7 +24,7 @@ public class PaymentGateway extends AppCompatActivity {
     }
 
     public void skiptohome(View view) {
-        startActivity(new Intent(PaymentGateway.this,HomeScreen.class));
+        startActivity(new Intent(PaymentGateway.this,BaseActivity.class));
         finish();
     }
     boolean twice = false;

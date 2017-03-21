@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class HomeScreen extends AppCompatActivity {
+public class HomeScreen extends BaseActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager LayoutManager;
@@ -37,7 +37,9 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        getLayoutInflater().inflate(R.layout.activity_home_screen, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
         name = getResources().getStringArray(R.array.persons_name);
         int count = 0;
         for (String Name : name) {
@@ -121,31 +123,4 @@ public class HomeScreen extends AppCompatActivity {
         );
 
     }
-
-    boolean twice = false;
-
-    @Override
-    public void onBackPressed() {
-
-        if (twice == true) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-            System.exit(0);
-        }
-        twice = true;
-        Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                twice = false;
-            }
-        }, 2000);
-
-
-        //  moveTaskToBack(true);
-    }
-
 }

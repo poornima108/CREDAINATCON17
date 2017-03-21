@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Sponsers extends AppCompatActivity {
+public class Sponsers extends BaseActivity {
 
 
     private RecyclerView recyclerView;
@@ -21,7 +21,10 @@ public class Sponsers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sponsers);
+
+        getLayoutInflater().inflate(R.layout.activity_sponsers, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         Toast toast = Toast.makeText(getApplicationContext(), "sponsers", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

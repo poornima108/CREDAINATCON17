@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Venue_travel extends AppCompatActivity {
+public class Venue_travel extends BaseActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -22,7 +22,9 @@ public class Venue_travel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_venue_travel);
+        getLayoutInflater().inflate(R.layout.activity_venue_travel, frameLayout);
+        mDrawerList.setItemChecked(position, true);
+        setTitle(listArray[position]);
 
         Toast toast = Toast.makeText(getApplicationContext(), "Venue and travel", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

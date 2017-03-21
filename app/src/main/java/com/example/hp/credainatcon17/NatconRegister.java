@@ -134,7 +134,7 @@ public class NatconRegister extends AppCompatActivity {
         btnSkipRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NatconRegister.this, HomeScreen.class));
+                startActivity(new Intent(NatconRegister.this, BaseActivity.class));
                 finish();
             }
         });

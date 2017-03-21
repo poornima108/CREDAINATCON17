@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "YOU ARE NOT LOGED IN", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "YOU ARE NOT LOGGED IN", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
 
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (dataSnapshot.child("paymentstatus").getValue().toString().equals("pending")) {
                     startActivity(new Intent(LoginActivity.this, PaymentGateway.class));
                 } else if (dataSnapshot.child("paymentstatus").getValue().toString().equals("approved")) {
-                    startActivity(new Intent(LoginActivity.this, HomeScreen.class));
+                    startActivity(new Intent(LoginActivity.this, BaseActivity.class));
                 }
             }
         } else if (dataSnapshot.child("adminauth").getValue().toString().equals("denied")) {
